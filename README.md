@@ -1,11 +1,19 @@
 # Meetdown
 
-Meetdown is a free, community-driven event and social network platform. Anyone can run their own instances, although there's a central instance hosted on https://meetdown.org which is free to use for anyone.
+Meetdown is a free, community-driven event and social network platform. Anyone can run their own instances, although there's a central instance hosted on https://meetdown.org which is free to use for everyone.
+
+Community-driven means that everyone can join the project and help make it better, e.g. by sending feature requests or even help development by creating pull requests.
+
+## About the name "Meetdown"
+
+The name "Meetdown" is just what came to my mind when I read about Meetup starting to charge for RSVPs. Everyone is invited to find a better name. Just open an issue in this repository and start a discussion.
 
 ## Features
 
 ### General
 
+- No ads
+- No user tracking
 - Self-registration with double-opt-in via e-mail
 - Login/logout with e-mail address and password
 - Browse groups and events
@@ -21,6 +29,10 @@ Meetdown is a free, community-driven event and social network platform. Anyone c
 - Display event details
 - Map of event location
 - Subscribe to/unsubscribe from events
+
+### Social Network
+
+- n/a (see Roadmap further below)
 
 ### UI
 
@@ -49,8 +61,6 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 
 - Search groups and events
 - Explore groups and events on a map
-- No ads
-- No user tracking
 
 ### Groups
 
@@ -86,7 +96,7 @@ Everyone is invited to join the project and send pull requests.
 
 ## Who's behind this project?
 
-This project is sponsored and hosted by Structr GmbH, the company behind the Structr platform (see https://github.com/structr/structr). Structr is an open-source development and runtime platform for graph application platform using a graph database (Neo4j @neo4j).
+This project is sponsored and hosted by Structr GmbH (https://structr.com), the company behind the Structr platform (see https://github.com/structr/structr). Structr is an open-source development and runtime platform for graph application platform using a graph database (Neo4j, see https://github.com/neo4j/neo4j).
 
 Structr GmbH doesn't have any commercial interests in the project, it's just a showcase/demo application to demonstrate and teach the features and benefits of the Structr platform. The initial version was developed by @amorgner in about 2 days.
 
