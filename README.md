@@ -92,5 +92,5 @@ Structr GmbH doesn't have any commercial interests in the project, it's just a s
 
 Structr will support the community with resources (GitHub hosting, issue management, discussions, development time).
 
-** The team behind this project will make sure that there will be no ads, no user tracking and no activities or other things that are a threat to an open, democratic, friendly and fair society.**
+**The team behind this project will make sure that there will be no ads, no user tracking and no activities or other things that are a threat to an open, democratic, friendly and fair society.**
 
