@@ -49,6 +49,8 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 
 - Search groups and events
 - Explore groups and events on a map
+- No ads
+- No user tracking
 
 ### Groups
 
@@ -78,9 +80,15 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 
 The project's sources (the content of this repo) is released under the Apache 2.0 license.
 
+## Development
+
+Everyone is invited to join the project and send pull requests.
+
 ## Who's behind this project?
 
 This project is sponsored and hosted by Structr GmbH, the company behind the Structr platform (see https://github.com/structr/structr). Structr is an open-source development and runtime platform for graph application platform using a graph database (Neo4j @neo4j).
 
-Structr GmbH doesn't have any commercial interests in the project, it's just a showcase/demo application to demonstrate and teach the features and benefits of the Structr platform. The first version was developed in about 2 days by @amorgner.
+Structr GmbH doesn't have any commercial interests in the project, it's just a showcase/demo application to demonstrate and teach the features and benefits of the Structr platform. The initial version was developed by @amorgner in about 2 days.
+
+**Structr will support the community with resources (GitHub hosting, issue management, discussions, development time) and will make sure that there will be no ads, no user tracking and no activities or other things that are a threat to an open, democratic, friendly and fair society.**
 
