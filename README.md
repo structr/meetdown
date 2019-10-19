@@ -90,5 +90,7 @@ This project is sponsored and hosted by Structr GmbH, the company behind the Str
 
 Structr GmbH doesn't have any commercial interests in the project, it's just a showcase/demo application to demonstrate and teach the features and benefits of the Structr platform. The initial version was developed by @amorgner in about 2 days.
 
-**Structr will support the community with resources (GitHub hosting, issue management, discussions, development time) and will make sure that there will be no ads, no user tracking and no activities or other things that are a threat to an open, democratic, friendly and fair society.**
+Structr will support the community with resources (GitHub hosting, issue management, discussions, development time).
+
+** The team behind this project will make sure that there will be no ads, no user tracking and no activities or other things that are a threat to an open, democratic, friendly and fair society.**
 
