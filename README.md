@@ -12,6 +12,7 @@ The name "Meetdown" is just what came to my mind when I read about Meetup starti
 
 ### General
 
+- Quality before quantity
 - No ads
 - No user tracking
 - Self-registration with double-opt-in via e-mail
