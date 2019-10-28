@@ -8,16 +8,20 @@ Community-driven means that everyone can join the project and help make it bette
 
 The name "Meetdown" is just what came to my mind when I read about Meetup starting to charge for RSVPs. Everyone is invited to find a better name. Just open an issue in this repository and start a discussion.
 
+## Principles
+
+- Community-driven
+- Quality before quantity
+- Small before big
+- Decentralized
+- Privacy first (no ads, no user tracking)
+- Earn money: possibly yes, but only to cover costs
+- Make profit: not intentional, if yes, not in the overall balance, i.e. any profit flows back into the Community
+
 ## Features
 
 ### General
 
-- Quality before quantity
-- Small before big
-- No ads
-- No user tracking
-- Decentralized
-- Community-driven
 - Self-registration with double-opt-in via e-mail
 - Login/logout with e-mail address and password
 - Browse groups and events
