@@ -15,6 +15,8 @@ The name "Meetdown" is just what came to my mind when I read about Meetup starti
 - Quality before quantity
 - No ads
 - No user tracking
+- Decentralized
+- Community-driven
 - Self-registration with double-opt-in via e-mail
 - Login/logout with e-mail address and password
 - Browse groups and events
