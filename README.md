@@ -13,6 +13,7 @@ The name "Meetdown" is just what came to my mind when I read about Meetup starti
 ### General
 
 - Quality before quantity
+- Small before big
 - No ads
 - No user tracking
 - Decentralized
