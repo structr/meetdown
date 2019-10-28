@@ -61,6 +61,8 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 
 - Search groups and events
 - Explore groups and events on a map
+- RSS feeds for subscribers
+- Feedback system
 
 ### Groups
 
@@ -74,6 +76,8 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 - Event subscribers and managers management
 - E-mail invitations
 - Event sharing on social platforms
+- Broadcasting/Push notifications (last-minute updates via Social Media/SMS)
+- Calendar integration
 
 ### Social Network
 
