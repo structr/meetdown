@@ -87,7 +87,8 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 ### Social Network
 
 - Follow/unfollow people
-- Post messages
+- Send messages to other people in your group (or anyone)
+- Profile pages (for speakers/organizers etc.)
 
 ### Security
 
