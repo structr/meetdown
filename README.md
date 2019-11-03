@@ -1,4 +1,5 @@
-# Meetdown
+<img src="https://meetdown.org/img/meetdown.png">
+
 
 Meetdown is a free, community-driven event and social network platform. Anyone can run their own instances, although there's a central instance hosted on https://meetdown.org which is free to use for everyone.
 
