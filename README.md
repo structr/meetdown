@@ -16,8 +16,7 @@ The name "Meetdown" is just what came to my mind when I read about Meetup starti
 - Small before big
 - Decentralized
 - Privacy first (no ads, no user tracking)
-- Earn money: possibly yes, but only to cover costs
-- Make profit: not intentional, if yes, not in the overall balance, i.e. any profit flows back into the Community
+- Non-commercial (Earn money? Maybe, but only to cover costs. Make profit? Not intentional. Any profit will flow back into the community)
 
 ## Features
 
