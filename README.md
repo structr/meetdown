@@ -31,12 +31,15 @@ The name "Meetdown" is just what came to my mind when I read about Meetup starti
 - Create groups
 - Within a group, create events
 - Join and leave groups
+- Public/private groups
 
 ### Events
 
 - Display event details
 - Map of event location
-- Subscribe to/unsubscribe from events
+- Subscribe to/unsubscribe from events (subscription means "I like to follow the event's news stream")
+- Register to/unregister from events (registration means "I plan to attend")
+- Public/private events
 
 ### Social Network
 
@@ -60,8 +63,9 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 
 ### Installation
 
-- Download and install Structr (https://support.structr.com/article/246)
-- Import the Meetdown application from the Dashboard (or via command line: https://support.structr.com/article/428#import).
+- Download and install the latest Structr snapshot from https://structr.com/download (see https://support.structr.com/article/246)
+- Import the Meetdown application via the "Import application from URL" on the Dashboard
+- URL of the export of the lastest version: https://meetdown.org/deployment/meetdown-export.zip
 
 ## Roadmap (planned features)
 
@@ -74,13 +78,13 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 
 ### Groups
 
-- Open (public, everyone can join) and closed groups (private, invitation/admission only)
 - Group member and organizers management
 - E-mail invitations
+- Closed groups (invitation/admission only)
 
 ### Events
 
-- Open (public, everyone can subscribe) and closed events (private, invitation/admission only)
+- Closed events (invitation/admission only)
 - Event subscribers and managers management
 - E-mail invitations
 - Event sharing on social platforms
@@ -99,14 +103,13 @@ Meetdown is a Structr application. It can only be run on a Structr instance.
 - Two-factor authentication
 - OAuth login (Auth0, GitHub, Twitter, Google, Facebook)
 
-
 ## License
 
 The project's sources (the content of this repo) is released under the Apache 2.0 license.
 
 ## Development
 
-Everyone is invited to join the project and send pull requests.
+Everyone is invited to join the project. For the moment, just use GitHub to create issues and send pull requests.
 
 ## Who's behind this project?
 
