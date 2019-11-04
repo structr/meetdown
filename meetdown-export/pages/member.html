@@ -1,0 +1,25 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template-caf431cc199f4cf79e6287cda2ea90be" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="detail-page-container" data-structr-meta-hide-conditions="empty(current)"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><img src="${current.img.tnMid.path}">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.name}</h2>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="col col-left">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${if(eq(current, me), 'My Groups', concat('Groups of ', current.name))}</h3>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="groups-hor-container">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="member-group" data-structr-meta-data-key="group" data-structr-meta-function-query="current.groups"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->group</i><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/group/${group.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${group.name}</a></div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${if(eq(current, me), 'My Subscribed Events', concat('Events ', current.name, ' has subscribed to'))}</h3>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="events-hor-container">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<structr:component src="5be8c91ae6f3478497056a51dc00101b" data-structr-meta-data-key="event" data-structr-meta-function-query="current.subscribedEvents">
+				</structr:component>
+			</div>
+		</div>
+	</div>
+</structr:template>

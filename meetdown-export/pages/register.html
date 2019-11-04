@@ -1,0 +1,57 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template-caf431cc199f4cf79e6287cda2ea90be" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="form-container registration-container">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h1><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Register</h1>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->E-Mail:</label>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<input autofocus="autofocus" name="e-mail" required="required" type="email">
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<input type="submit" value="Send registration e-mail">
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->live('.registration-container input[name="e-mail"]', 'keydown', function(e) {
+	const key = e.keyCode;
+	if (key === 13) {
+		document.querySelector('.registration-container input[type="submit"]').click();
+	}
+});
+
+live('.registration-container input[type="submit"]', 'click', function() {
+	const eMail = document.querySelector('.registration-container input[name="e-mail"]').value;
+	const btn = document.querySelector('.registration-container input[type="submit"]')
+	postAjax('/structr/rest/registration', JSON.stringify({ eMail: eMail }), function(data) {
+		const sendRegistrationButton = document.querySelector('.registration-container input[type="submit"]')
+	});
+	
+	postAjax('/structr/rest/registration', JSON.stringify({ eMail: eMail }), function(data) {
+		btn.value = 'Check your inbox';
+		btn.style.backgroundColor = '#b5b5b5';
+		btn.style.cursor = 'not-allowed';
+		btn.disabled = true;
+		window.setTimeout(function() {
+			window.location.href = '/login&amp;e-mail=' + eMail;
+		}, 2000);
+	}, function(data) {
+		btn.disabled = true;
+		btn.style.backgroundColor = '#b5b5b5';
+		btn.style.cursor = 'not-allowed';
+		btn.value = 'Something went wrong.';
+		window.setTimeout(function() {
+			btn.style.backgroundColor = '#548405';
+			btn.value = 'Send registration e-mail';
+			btn.disabled = false;
+		}, 2000);
+		
+	});
+	
+});
+</script>
+</structr:template>

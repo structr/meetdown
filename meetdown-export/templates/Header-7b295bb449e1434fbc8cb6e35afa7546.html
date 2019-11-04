@@ -1,0 +1,20 @@
+<nav>
+	<div class="logo"><a href="/">meetdown</a></div>
+	<div class="beta-label">BETA</div>
+	<div class="main-actions header-menu">
+		<ul>
+			${if(empty(me), '', '<li><a class="btn" href="/group"><i class="material-icons">group_add</i>Create New Group</a></li>')}
+		</ul>			
+	</div>
+	<i class="mobile-menu-icon material-icons">menu</i>
+	<div class="hidden main-actions-mobile header-menu">
+		<ul>
+			${if(empty(me), '', '<li><a class="btn" href="/profile"><i class="material-icons">account_circle</i>User Profile</a></li>')}
+			${if(empty(me), '', '<li><a class="btn" href="/group"><i class="material-icons">group_add</i>Create New Group</a></li>')}
+			${if(empty(me), '<li><a href="/login">Login</a></li><li><a href="/register">Register</a></li>', '<li><a href="/logout">Logout</a></li>')}
+		</ul>			
+	</div>
+	<div class="avatar">
+		${if(empty(me.img), '<i class="material-icons">account_circle</i>', concat('<a href="/profile"><img src="/', me.img.tnSmall.name, '"></a>'))}
+	</div>
+</nav>

@@ -1,0 +1,159 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template-caf431cc199f4cf79e6287cda2ea90be" data-structr-meta-name="Main Page Template">
+	<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="detail-page-container">
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h2><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Edit Event</h2>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="event-text"></div>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="form-container create-event-container">
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Image: </label>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input accept="image/*" name="image" required="required" type="file">
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name: </label>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="name" placeholder="Enter the name of the event" required="required" type="text" value="${current.name}">
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Location: </label>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="location" placeholder="Choose a location" value="${from_json(current.placeData).name}">
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Date: </label>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="date" placeholder="Choose a date" type="datetime-local" value="${date_format(current.date, &quot;yyyy-MM-dd'T'HH:mm&quot;)}">
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Text: </label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) --><textarea name="text" placeholder="Enter a descriptive text" rows="10"><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.text}</textarea>
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="my-id" type="hidden" value="${me.id}">
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="group-id" type="hidden" value="${request.group}">
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="place-data" type="hidden">
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="" type="submit" value="Update event">
+			</div>
+		</div>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="event-preview-container">
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h3><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Preview</h3>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<p><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->This is how the event card will look like.</p>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<structr:component src="5be8c91ae6f3478497056a51dc00101b">
+			</structr:component>
+		</div>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl3p1NFpW3_TGJhZIb9lseZii34DU-CzI&amp;libraries=places" type="text/javascript"></script>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script type="text/javascript"><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->live('.form-container input[type="submit"]', 'click', function() {
+	const name      = document.querySelector('.form-container input[name="name"]').value;
+	const location  = document.querySelector('.form-container input[name="location"]').value;
+	const date      = document.querySelector('.form-container input[name="date"]').value;
+	const text      = document.querySelector('.form-container textarea[name="text"]').value;
+	const groupId   = document.querySelector('.form-container input[name="group-id"]').value;
+	const myId      = document.querySelector('.form-container input[name="my-id"]').value;
+	const placeData = document.querySelector('.form-container input[name="place-data"]').value;
+	
+	postAjax('/structr/rest/Event', JSON.stringify({
+		name: name,
+		date: date + ':00Z',
+		imageUpload: document.querySelector('.event-preview-container .event .event-image img').src,
+		text: text,
+		group: groupId,
+		placeData: placeData,
+		organizers: [{id: myId}] }),
+			function(data) {
+				window.location.href = '/event/' + JSON.parse(data).result[0];
+			});
+	});
+
+live('.form-container input[name="name"]', 'keyup', function(e) {
+	document.querySelector('.event-preview-container .event h3').innerText = e.target.value;
+});
+
+live('.form-container input[name="date"]', 'change', function(e) {
+	document.querySelector('.event-preview-container .event .event-date').innerText = new Date(e.target.value).toLocaleString().slice(0, -3);
+});
+
+live('.form-container textarea[name="text"]', 'keyup', function(e) {
+	document.querySelector('.event-preview-container .event .event-text').innerText = e.target.value;
+});
+
+
+let updatePlace = function() {
+	const place = autocomplete.getPlace();
+	console.log(place);
+	document.querySelector('.event-preview-container .event .event-location').innerText = place.name;
+	document.querySelector('.form-container input[name="place-data"]').value = JSON.stringify(place);
+};
+
+
+live('.form-container input[name="image"]', 'change', function() {
+    const files = this.files;
+    for (let i=0; i&lt;files.length; i++){
+        previewImage(this.files[i]);
+    }
+ 
+}, false);
+
+function previewImage(file) {
+ 
+    var imagePreviewElement = document.querySelector('.event-preview-container .event .event-image');
+    var imageType = /image.*/;
+ 
+    if (!file.type.match(imageType)) {
+        throw "File type must be an image";
+    }
+ 
+	imagePreviewElement.innerHTML = '';
+	
+    const img = document.createElement('img');
+    img.file = file;
+    imagePreviewElement.appendChild(img);
+ 
+    const reader = new FileReader();
+    reader.onload = (function(i) { return function(e) { i.src = e.target.result; }; })(img);
+    reader.readAsDataURL(file);
+}
+
+let autocomplete;
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	const input = document.querySelector('.form-container input[name="location"]');
+	const options = {
+	  //types: ['(cities)'],
+	  //componentRestrictions: {country: 'de'}
+	};
+
+	autocomplete = new google.maps.places.Autocomplete(input, options);
+	autocomplete.addListener('place_changed', updatePlace);
+	
+});
+
+
+	</script>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<script type="text/javascript"></script>
+</structr:template>

@@ -1,0 +1,128 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template-caf431cc199f4cf79e6287cda2ea90be" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="detail-page-container">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h1><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->User Profile</h1>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="profile-preview-container">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="profile">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="profile-image"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="${link.name}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><img src="/${me.img.tnMid.name}"></a></div>
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="form-container profile-container">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name:</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input autofocus="autofocus" name="name" required="required" value="${me.name}">
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Image: </label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input accept="image/*" name="image" required="required" type="file">
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->E-Mail:</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input autofocus="autofocus" disabled="disabled" name="e-mail" readonly="readonly" value="${me.eMail}">
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Password:</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="password" type="password">
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Privacy</h2>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<p><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Default: You are only visible to the members of the groups you joined.</p>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Visible to others</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input checked="${is(me.visibleToAuthenticatedUsers, 'checked')}" name="protected" type="checkbox">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<p><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->You are also visible to other authenticated/logged-in users</p>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Public</label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input checked="${is(me.visibleToPublicUsers, 'checked')}" name="public" type="checkbox" value="">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<p><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->You are visible to all visitors</p>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input type="submit" value="Save">
+			</div>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->live('.profile-container input[type="submit"]', 'click', function() {
+	const name      = document.querySelector('.profile-container input[name="name"]').value;
+	const eMail     = document.querySelector('.profile-container input[name="e-mail"]').value;
+	const password  = document.querySelector('.profile-container input[name="password"]').value;
+	const public    = document.querySelector('.profile-container input[name="public"]').checked;
+	const protected = document.querySelector('.profile-container input[name="protected"]').checked;
+	const newImage  = document.querySelector('.profile-preview-container .profile .profile-image img').src;
+	
+	const data = {
+		name: name,
+		eMail: eMail,
+		password: password,
+		visibleToPublicUsers: public,
+		visibleToAuthenticatedUsers: protected,
+	};
+	
+	//console.log(newImage);
+	
+	if (newImage.startsWith('data:image')) {
+		data.imageUpload = newImage;
+	}
+	
+	putAjax('/structr/rest/me', JSON.stringify(data), function(data) {
+		window.location.href = '/profile';
+	});
+});
+
+live('.profile-container input[name="image"]', 'change', function() {
+    const files = this.files;
+    for (let i=0; i&lt;files.length; i++){
+        previewImage(this.files[i]);
+    }
+ 
+}, false);
+
+function previewImage(file) {
+ 
+    var imagePreviewElement = document.querySelector('.profile-preview-container .profile .profile-image');
+    var imageType = /image.*/;
+ 
+    if (!file.type.match(imageType)) {
+        throw "File type must be an image";
+    }
+ 
+	imagePreviewElement.innerHTML = '';
+	
+    const img = document.createElement('img');
+    img.file = file;
+    imagePreviewElement.appendChild(img);
+ 
+    const reader = new FileReader();
+    reader.onload = (function(i) { return function(e) { i.src = e.target.result; }; })(img);
+    reader.readAsDataURL(file);
+}</script>
+</structr:template>

@@ -1,0 +1,28 @@
+{
+  "3d6f5023adf74ac1af9a39a420523ea0": {
+    "contentType": null,
+    "id": "3d6f5023adf74ac1af9a39a420523ea0",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "5be8c91ae6f3478497056a51dc00101b": {
+    "contentType": null,
+    "id": "5be8c91ae6f3478497056a51dc00101b",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "Header-7b295bb449e1434fbc8cb6e35afa7546": {
+    "contentType": "text/html",
+    "id": "7b295bb449e1434fbc8cb6e35afa7546",
+    "shared": "true",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  "Main Page Template-caf431cc199f4cf79e6287cda2ea90be": {
+    "contentType": "text/html",
+    "id": "caf431cc199f4cf79e6287cda2ea90be",
+    "shared": "true",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  }
+}

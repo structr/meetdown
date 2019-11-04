@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>${if(not(empty(current)), current.name, titleize(page.name, '-'))} | meetdown - ${titleize(page.name, '-')}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link href="https://fonts.googleapis.com/css?family=Barlow+Semi+Condensed|Oleo+Script&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+		<link href="/css/main.css" rel="stylesheet">
+		<script src="/js/main.js"></script>
+	</head>
+	<body>
+		<header>
+${include('Header')}
+		</header>
+		
+		<main>
+${render(children)}
+		</main>
+		
+		<footer>
+${include('Footer')}
+		</footer>
+	</body>
+</html>

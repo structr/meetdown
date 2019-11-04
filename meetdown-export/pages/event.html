@@ -1,0 +1,340 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template-caf431cc199f4cf79e6287cda2ea90be" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="event-header">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="detail-page-container event-detail-container" data-structr-meta-hide-conditions="empty(current)">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="btn-interaction" data-structr-meta-hide-conditions="contains(current.subscribers, me)"><!-- @structr:pagelink(edit-event), @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn ${is(not(empty(me)), 'subscribe-to-event')}" href="${is(empty(me), concat('/login?return=/event/', current.id))}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->add_circle_outline</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Subscribe</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="btn-interaction" data-structr-meta-show-conditions="contains(current.subscribers, me)"><!-- @structr:pagelink(edit-event), @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn unsubscribe-from-event"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->remove_circle_outline</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Unsubscribe</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="btn-interaction" data-structr-meta-hide-conditions="contains(current.registeredMembers, me)"><!-- @structr:pagelink(edit-event), @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn ${is(not(empty(me)), 'register-for-event')} m-r-1" href="${is(empty(me), concat('/login?return=/event/', current.id))}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->add_circle_outline</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Register</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="btn-interaction" data-structr-meta-show-conditions="contains(current.registeredMembers, me)"><!-- @structr:pagelink(edit-event), @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn cancel-event-registration m-r-1"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->remove_circle_outline</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Cancel registration</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="btn-interaction m-r-1" data-structr-meta-show-conditions="contains(current.organizers, me)"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn edit-event" href="/edit-event/${current.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->edit</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Edit</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->event</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.name} <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons ${is(not(empty(me)), 'toggle-public-private')}" title="Private event, click to make public" data-structr-meta-hide-conditions="current.visibleToPublicUsers"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->lock</i><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons ${is(not(empty(me)), 'toggle-public-private')}" title="Public event, click to make private" data-structr-meta-show-conditions="current.visibleToPublicUsers"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->public</i></h2>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="event-date"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(current.date, 'dd.MM.yyyy, HH:mm')}</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="event-group"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Hosted by <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/group/${current.group.id}" title="Hosted by group"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->group</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.group.name}</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="event-organizers"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->Organized by <!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/member/${organizer.id}" title="Organizer" data-structr-meta-data-key="organizer" data-structr-meta-function-query="current.organizers"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->person</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${organizer.name}</a></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->live('.toggle-public-private', 'click', function() {
+	getAjax('/structr/rest/Event/${current.id}', function(response) {
+		const data = JSON.parse(response);
+		const public = data.result.visibleToPublicUsers;
+		console.log('Event is public?', public);
+		postAjax('/structr/rest/Event/${current.id}/' + (public ? 'un' : '') + 'publish', JSON.stringify({}), function(data) {
+			window.location.reload(true);
+		});
+	});	
+});
+
+live('.subscribe-to-event', 'click', function() {
+	getAjax('/structr/rest/${me.id}', function(response) {
+		const data = JSON.parse(response);
+		data.result.subscribedEvents.push({id: '${current.id}'});
+		postAjax('/structr/rest/Event/${current.id}/subscribe', JSON.stringify({ id: '${me.id}' }), function(data) {
+			window.location.reload(true);
+		});
+	});	
+});
+
+live('.unsubscribe-from-event', 'click', function() {
+	getAjax('/structr/rest/${me.id}', function(response) {
+		const data = JSON.parse(response);
+		data.result.subscribedEvents.push({id: '${current.id}'});
+		postAjax('/structr/rest/Event/${current.id}/unsubscribe', JSON.stringify({ id: '${me.id}' }), function(data) {
+			window.location.reload(true);
+		});
+	});
+});
+
+live('.register-for-event', 'click', function() {
+	getAjax('/structr/rest/${me.id}', function(response) {
+		const data = JSON.parse(response);
+		data.result.subscribedEvents.push({id: '${current.id}'});
+		postAjax('/structr/rest/Event/${current.id}/register', JSON.stringify({ id: '${me.id}' }), function(data) {
+			window.location.reload(true);
+		});
+	});	
+});
+
+live('.cancel-event-registration', 'click', function() {
+	getAjax('/structr/rest/${me.id}', function(response) {
+		const data = JSON.parse(response);
+		data.result.subscribedEvents.push({id: '${current.id}'});
+		postAjax('/structr/rest/Event/${current.id}/deregister', JSON.stringify({ id: '${me.id}' }), function(data) {
+			window.location.reload(true);
+		});
+	});
+});
+</script>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="event-body">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="detail-page-container event-detail-container" data-structr-meta-hide-conditions="empty(current)">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="col col-left">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="event-image" data-structr-meta-hide-conditions="empty(current.images)"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><img src="/${current.images[0].id}"></div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="event-text"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/markdown) -->${current.text}</div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="col col-right">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="event-date"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->alarm</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${date_format(current.date, 'dd.MM.yyyy, HH:mm')}</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="event-location"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->place</i>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) -->${from_json(current.placeData).name}, ${from_json(current.placeData).formatted_address}</div>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="event-location-container"></div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="event-subscribers-container">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Subscribers</h3>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="event-subscriber" data-structr-meta-data-key="subscriber" data-structr-meta-function-query="current.subscribers"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><img src="${subscriber.img.tnSmall.path}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/member/${subscriber.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${subscriber.name}</a></div>
+				</div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<div class="event-subscribers-container">
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Registered members</h3>
+					<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+					<div class="event-registered-member" data-structr-meta-data-key="registeredMember" data-structr-meta-function-query="current.registeredMembers"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><img src="${registeredMember.img.tnSmall.path}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/member/${registeredMember.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${registeredMember.name}</a></div>
+				</div>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<script async="async" defer="defer" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl3p1NFpW3_TGJhZIb9lseZii34DU-CzI&amp;callback=initMap" type="text/javascript"></script>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->document.addEventListener('DOMContentLoaded', function() {
+
+	window.setTimeout(function() {
+		
+		let img = document.querySelector('.event-detail-container img');
+		img.src = img.src;
+		
+	}, 1000);
+	
+});
+
+let map, infoWindow;
+
+const lat = ${from_json(current.placeData).geometry.location.lat};
+const lng = ${from_json(current.placeData).geometry.location.lng};
+
+function initMap() {
+	var pos = {
+		lat: lat,
+		lng: lng
+	};
+
+	map = new google.maps.Map(document.querySelector('.event-location-container'), {
+		center: pos,
+		zoom: 14
+	});
+	infoWindow = new google.maps.InfoWindow;
+	infoWindow.setPosition(pos);
+	infoWindow.setContent('${from_json(current.placeData).name}');
+	infoWindow.open(map);
+	map.setCenter(pos);
+	
+/*
+	// Try HTML5 geolocation.
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(position) {
+			var pos = {
+				lat: position.coords.latitude,
+				lng: position.coords.longitude
+			};
+
+			infoWindow.setPosition(pos);
+			infoWindow.setContent('${from_json(current.placeData).name}');
+			infoWindow.open(map);
+			map.setCenter(pos);
+		}, function() {
+			handleLocationError(true, infoWindow, map.getCenter());
+		});
+	} else {
+		// Browser doesn't support Geolocation
+		handleLocationError(false, infoWindow, map.getCenter());
+	}
+	*/
+}
+
+function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+	infoWindow.setPosition(pos);
+	infoWindow.setContent(browserHasGeolocation ?
+						  'Error: The Geolocation service failed.' :
+						  'Error: Your browser doesn\'t support geolocation.');
+	infoWindow.open(map);
+}
+</script>
+		</div>
+	</div>
+	<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="detail-page-container" data-structr-meta-show-conditions="empty(current)">
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h2><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Create New Event</h2>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="event-text"><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.text}</div>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="form-container create-event-container">
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Image: </label>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input accept="image/*" name="image" required="required" type="file">
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name: </label>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="name" placeholder="Enter the name of the event" required="required" type="text">
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Location: </label>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="location" placeholder="Choose a location">
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Date: </label>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="date" placeholder="Choose a date" type="datetime-local">
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Text: </label><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) --><textarea name="text" placeholder="Enter a descriptive text" rows="10"></textarea>
+			</div>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="my-id" type="hidden" value="${me.id}">
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="group-id" type="hidden" value="${request.group}">
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="place-data" type="hidden">
+				<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="" type="submit" value="Create event">
+			</div>
+		</div>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="event-preview-container">
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h3><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Preview</h3>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<p><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->This is how the event card will look like.</p>
+			<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<structr:component src="5be8c91ae6f3478497056a51dc00101b">
+			</structr:component>
+		</div>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl3p1NFpW3_TGJhZIb9lseZii34DU-CzI&amp;libraries=places" type="text/javascript"></script>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script type="text/javascript"><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->live('.form-container input[type="submit"]', 'click', function() {
+	const name      = document.querySelector('.form-container input[name="name"]').value;
+	const location  = document.querySelector('.form-container input[name="location"]').value;
+	const date      = document.querySelector('.form-container input[name="date"]').value;
+	const text      = document.querySelector('.form-container textarea[name="text"]').value;
+	const groupId   = document.querySelector('.form-container input[name="group-id"]').value;
+	const myId      = document.querySelector('.form-container input[name="my-id"]').value;
+	const placeData = document.querySelector('.form-container input[name="place-data"]').value;
+	
+	postAjax('/structr/rest/Event', JSON.stringify({
+		name: name,
+		date: date + ':00Z',
+		imageUpload: document.querySelector('.event-preview-container .event .event-image img').src,
+		text: text,
+		group: groupId,
+		placeData: placeData,
+		organizers: [{id: myId}] }),
+			function(data) {
+				window.location.href = '/event/' + JSON.parse(data).result[0];
+			});
+	});
+
+live('.form-container input[name="name"]', 'keyup', function(e) {
+	document.querySelector('.event-preview-container .event h3').innerText = e.target.value;
+});
+
+live('.form-container input[name="date"]', 'change', function(e) {
+	document.querySelector('.event-preview-container .event .event-date').innerText = new Date(e.target.value).toLocaleString().slice(0, -3);
+});
+
+live('.form-container textarea[name="text"]', 'keyup', function(e) {
+	document.querySelector('.event-preview-container .event .event-text').innerText = e.target.value;
+});
+
+
+let updatePlace = function() {
+	const place = autocomplete.getPlace();
+	console.log(place);
+	document.querySelector('.event-preview-container .event .event-location').innerText = place.name;
+	document.querySelector('.form-container input[name="place-data"]').value = JSON.stringify(place);
+};
+
+
+live('.form-container input[name="image"]', 'change', function() {
+    const files = this.files;
+    for (let i=0; i&lt;files.length; i++){
+        previewImage(this.files[i]);
+    }
+ 
+}, false);
+
+function previewImage(file) {
+ 
+    var imagePreviewElement = document.querySelector('.event-preview-container .event .event-image');
+    var imageType = /image.*/;
+ 
+    if (!file.type.match(imageType)) {
+        throw "File type must be an image";
+    }
+ 
+	imagePreviewElement.innerHTML = '';
+	
+    const img = document.createElement('img');
+    img.file = file;
+    imagePreviewElement.appendChild(img);
+ 
+    const reader = new FileReader();
+    reader.onload = (function(i) { return function(e) { i.src = e.target.result; }; })(img);
+    reader.readAsDataURL(file);
+}
+
+let autocomplete;
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	const input = document.querySelector('.form-container input[name="location"]');
+	const options = {
+	  //types: ['(cities)'],
+	  //componentRestrictions: {country: 'de'}
+	};
+
+	autocomplete = new google.maps.places.Autocomplete(input, options);
+	autocomplete.addListener('place_changed', updatePlace);
+	
+});
+
+
+	</script>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<script type="text/javascript"></script>
+</structr:template>

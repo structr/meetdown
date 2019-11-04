@@ -1,0 +1,128 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template-caf431cc199f4cf79e6287cda2ea90be" data-structr-meta-name="Main Page Template">
+	<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="detail-page-container">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Edit Group</h2>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="form-container create-group-container">
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div class="group-preview-container"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><img src="/${current.images[0].tnMid.name}"></div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Image: </label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input accept="image/*" name="image" required="required" type="file">
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Name: </label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="name" placeholder="Enter the name of the group" required="required" type="text" value="${current.name}">
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Location: </label>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="location" placeholder="Choose a location" value="${from_json(current.placeData).name}">
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Description: </label><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><textarea name="description" placeholder="Enter a descriptive text" rows="10"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${current.description}</textarea>
+			</div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<div>
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="my-id" type="hidden" value="${me.id}">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="place-data" type="hidden">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<input name="" type="submit" value="Update group">
+			</div>
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDl3p1NFpW3_TGJhZIb9lseZii34DU-CzI&amp;libraries=places" type="text/javascript"></script>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->live('.form-container input[type="submit"]', 'click', function() {
+	const name        = document.querySelector('.form-container input[name="name"]').value;
+	const location    = document.querySelector('.form-container input[name="location"]').value;
+	const description = document.querySelector('.form-container textarea[name="description"]').value;
+	const myId        = document.querySelector('.form-container input[name="my-id"]').value;
+	const placeData   = document.querySelector('.form-container input[name="place-data"]').value;
+	
+	const data = {
+		name: name,
+		description: description,
+		placeData: placeData,
+		managers: [{id: myId}]
+	};
+
+	const imagePreviewElement = document.querySelector('.group-preview-container img');
+	 
+	if (imagePreviewElement.src.startsWith('data:image')) {
+		data.imageUpload = document.querySelector('.group-preview-container img').src;
+	}
+
+	putAjax('/structr/rest/Group/${current.id}', JSON.stringify(data),
+			function(data) {
+				window.location.href = '/group/${current.id}';
+			})
+	});
+
+
+let updatePlace = function() {
+	const place = autocomplete.getPlace();
+	document.querySelector('.form-container input[name="place-data"]').value = JSON.stringify(place);
+};
+
+
+live('.form-container input[name="image"]', 'change', function() {
+    const files = this.files;
+    for (let i=0; i&lt;files.length; i++){
+        previewImage(this.files[i]);
+    }
+ 
+}, false);
+
+function previewImage(file) {
+ 
+    var imagePreviewElement = document.querySelector('.group-preview-container');
+    var imageType = /image.*/;
+ 
+    if (!file.type.match(imageType)) {
+        throw "File type must be an image";
+    }
+ 
+	imagePreviewElement.innerHTML = '';
+	
+    const img = document.createElement('img');
+    img.file = file;
+    imagePreviewElement.appendChild(img);
+ 
+    const reader = new FileReader();
+    reader.onload = (function(i) { return function(e) { i.src = e.target.result; }; })(img);
+    reader.readAsDataURL(file);
+}
+
+let autocomplete;
+
+document.addEventListener('DOMContentLoaded', function() {
+
+	const input = document.querySelector('.form-container input[name="location"]');
+	const options = {
+	  //types: ['(cities)'],
+	  //componentRestrictions: {country: 'de'}
+	};
+
+	autocomplete = new google.maps.places.Autocomplete(input, options);
+	autocomplete.addListener('place_changed', updatePlace);
+	
+});
+
+
+	</script>
+	</div>
+</structr:template>

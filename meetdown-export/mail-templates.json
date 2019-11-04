@@ -1,0 +1,26 @@
+[
+  {
+    "filename": "SENDER_ADDRESS_-_en.html",
+    "id": "756bb81f9a3a45d2b5012e3186c0d1bf",
+    "locale": "en",
+    "name": "SENDER_ADDRESS",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  {
+    "filename": "SENDER_NAME_-_en.html",
+    "id": "5ca623f6b16d41dab488eadaec6655d6",
+    "locale": "en",
+    "name": "SENDER_NAME",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  },
+  {
+    "filename": "SUBJECT_-_en.html",
+    "id": "33046eba5934433da4effcecfb2ccea3",
+    "locale": "en",
+    "name": "SUBJECT",
+    "visibleToAuthenticatedUsers": true,
+    "visibleToPublicUsers": true
+  }
+]

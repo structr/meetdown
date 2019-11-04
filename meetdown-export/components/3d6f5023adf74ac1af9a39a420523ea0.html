@@ -1,0 +1,21 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd) --><div class="group" data-structr-meta-data-key="event" data-structr-meta-rest-query="Event?sort=date&amp;pageSize=4">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="group-image"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/group/${group.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><img src="${group.images[0].tnMid.path}" title="${group.images[0].tnMid.path}"></a></div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="group-location"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${group.location.name}</div><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/group/${group.id}">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${abbr(group.name, 30)}</h3>
+	</a>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="group-managers">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="group-manager" data-structr-meta-data-key="manager" data-structr-meta-function-query="group.managers"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->person</i><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/member/${manager.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${manager.name}</a></div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="group-members">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="group-member" data-structr-meta-data-key="member" data-structr-meta-function-query="group.members"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><img src="${member.img.tnSmall.path}"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/member/${member.id}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${member.name}</a></div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="group-description"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${abbr(group.description, 60)}</div>
+</div>

@@ -1,0 +1,63 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template-caf431cc199f4cf79e6287cda2ea90be" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="form-container login-container">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h1><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Login</h1>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->E-Mail:</label>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<input autofocus="autofocus" name="e-mail" required="required" value="${request.e-mail}">
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<label><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Password:</label>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<input name="password" type="password">
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<input type="submit" value="Login">
+		</div>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div class="register-link"><!-- @structr:pagelink(register), @structr:owner(admin), @structr:grant(admin,arwd) --><a href="${link.name}" src="${link.path}"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->New user? Please register first.</a></div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<script type="text/javascript"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/javascript) -->live('.login-container input[name="e-mail"]', 'keydown', function(e) {
+	const key = e.keyCode;
+	if (key === 13) {
+		document.querySelector('.login-container input[type="password"]').focus();
+	}
+});
+
+live('.login-container input[name="password"]', 'keydown', function(e) {
+	const key = e.keyCode;
+	if (key === 13) {
+		document.querySelector('.login-container input[type="submit"]').click();
+	}
+});
+
+live('.login-container input[type="submit"]', 'click', function() {
+	const eMail    = document.querySelector('.login-container input[name="e-mail"]').value;
+	const password = document.querySelector('.login-container input[name="password"]').value;
+	const btn      = document.querySelector('.login-container input[type="submit"]');
+	postAjax('/structr/rest/login', JSON.stringify({ eMail: eMail, password: password }), function(data) {
+		btn.disabled = true;
+		btn.value = 'Login successful';
+		const returnURI = '${request.return}';
+		window.location.href = returnURI.length ? returnURI : '/';
+	}, function(data) {
+		btn.disabled = true;
+		btn.value = 'Wrong username or password.';
+		window.setTimeout(function() {
+			btn.value = 'Login';
+			btn.disabled = false;
+		}, 2000);
+		
+	});
+});
+</script>
+</structr:template>

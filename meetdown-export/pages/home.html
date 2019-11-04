@@ -1,0 +1,43 @@
+<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/html) --><structr:template src="Main Page Template-caf431cc199f4cf79e6287cda2ea90be" data-structr-meta-name="Main Page Template">
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="home-hero-section">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<h1><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Meetdown</h1>
+			<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+			<p><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Welcome to Meetdown, a community-driven event and social network.</p>
+		</div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="groups-hor-container">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Groups</h2>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="3d6f5023adf74ac1af9a39a420523ea0" data-structr-meta-data-key="group" data-structr-meta-rest-query="Group?sort=name">
+		</structr:component>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:hidden -->
+		<div class="group" data-structr-meta-data-key="group" data-structr-meta-rest-query="Group"><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><a href="/group/${group.id}">
+				<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+				<h3><!-- @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->group</i><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->${group.name}</h3>
+			</a></div>
+		<!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<div><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) --><a class="btn" href="/group"><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd) --><i class="material-icons"><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->group_add</i><!-- @structr:protected, @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Create New Group</a></div>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:hidden -->
+	<div class="events-hor-container">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Nearby Events </h2>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="5be8c91ae6f3478497056a51dc00101b" data-structr-meta-data-key="event" data-structr-meta-rest-query="Event?sort=date&amp;pageSize=4">
+		</structr:component>
+	</div>
+	<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+	<div class="events-hor-container">
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<h2><!-- @structr:owner(admin), @structr:grant(admin,arwd), @structr:content(text/plain) -->Next Events</h2>
+		<!-- @structr:owner(admin), @structr:grant(admin,arwd) -->
+		<structr:component src="5be8c91ae6f3478497056a51dc00101b" data-structr-meta-data-key="event" data-structr-meta-rest-query="Event?sort=date&amp;pageSize=4">
+		</structr:component>
+	</div>
+</structr:template>

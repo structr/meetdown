@@ -1,0 +1,14 @@
+[
+  {
+    "configuration": "{\n\t\"modalId\": {\n\t\t\"help\": \"Sets the id of the outer div of the new modal\"\n\t},\n\t\"modalTitle\": {\n\t\t\"help\": \"Defines the content for the Title of the new modal\"\n\t},\n\t\"modalSubtitle\": {\n\t\t\"help\": \"You can set a subtitle for the modal here\"\n\t},\n\t\"modalSize\": {\n\t\t\"help\": \"Defines how big the modal will be\",\n\t\t\"type\": \"select\",\n\t\t\"options\": {\n\t\t\t\"\": \"Normal\",\n\t\t\t\"modal-sm\": \"Small\",\n\t\t\t\"modal-lg\": \"Large\"\n\t\t},\n\t\t\"default\": \"\"\n\t},\n\t\"modalColor\": {\n\t\t\"help\": \"Defines the color of the new modal\",\n\t\t\"type\": \"select\",\n\t\t\"options\": {\n\t\t\t\"\": \"Normal\",\n\t\t\t\"hmodal-success\": \"Green\",\n\t\t\t\"hmodal-danger\": \"Red\",\n\t\t\t\"hmodal-warning\": \"Orange\",\n\t\t\t\"hmodal-info\": \"Blue\"\n\t\t},\n\t\t\"default\": \"\"\n\t}\n}",
+    "description": "",
+    "id": "3a9657d68b3744518a138ffbb19f11bd",
+    "isWidget": true,
+    "name": "test-widget",
+    "pictures": [],
+    "source": "\u003cdiv\u003e\n\t\u003cbutton class\u003d\"btn-default btn\" type\u003d\"button\" data-target\u003d\"#[modalId]\" data-toggle\u003d\"modal\"\u003eOpen Modal\u003c/button\u003e\n\t\u003cdiv class\u003d\"modal fade [modalColor]\" id\u003d\"[modalId]\" role\u003d\"dialog\"\u003e\n\t\t\u003cdiv class\u003d\"modal-dialog [modalSize]\" role\u003d\"document\"\u003e\n\t\t\t\u003cdiv class\u003d\"modal-content\"\u003e\n\t\t\t\t\u003cdiv class\u003d\"color-line\"\u003e\u003c/div\u003e\n\t\t\t\t\u003cdiv class\u003d\"modal-header\"\u003e\n\t\t\t\t\t\u003ch4 class\u003d\"modal-title\"\u003e[modalTitle]\u003c/h4\u003e\u003csmall class\u003d\"font-bolt\"\u003e[modalSubtitle]\u003c/small\u003e\n\t\t\t\t\u003c/div\u003e\n\t\t\t\t\u003cdiv class\u003d\"modal-body\"\u003e\u003c/div\u003e\n\t\t\t\t\u003cdiv class\u003d\"modal-footer\"\u003e\n\t\t\t\t\t\u003cbutton class\u003d\"btn btn-default\" data-dismiss\u003d\"modal\"\u003eClose\u003c/button\u003e\n\t\t\t\t\u003c/div\u003e\n\t\t\t\u003c/div\u003e\n\t\t\u003c/div\u003e\n\t\u003c/div\u003e\n\u003c/div\u003e",
+    "treePath": null,
+    "visibleToAuthenticatedUsers": false,
+    "visibleToPublicUsers": false
+  }
+]

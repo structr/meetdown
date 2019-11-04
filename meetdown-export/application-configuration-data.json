@@ -1,0 +1,32 @@
+[
+  {
+    "configType": "layout",
+    "content": "{\"_version\":2,\"positions\":{\"Member\":{\"top\":26,\"left\":476},\"City\":{\"top\":533,\"left\":581},\"EventLocation\":{\"top\":434,\"left\":342},\"Event\":{\"top\":249,\"left\":209},\"Category\":{\"top\":352,\"left\":21},\"EventImage\":{\"top\":361,\"left\":482},\"Country\":{\"top\":635,\"left\":764},\"GroupImage\":{\"top\":354,\"left\":980},\"Group\":{\"top\":235,\"left\":833}},\"hiddenTypes\":[\"ApplicationConfigurationDataNode\",\"Favoritable\",\"Localization\",\"Location\",\"MailTemplate\",\"Person\",\"Principal\",\"AbstractFile\",\"Comment\",\"Content\",\"ContentContainer\",\"ContentItem\",\"CsvFile\",\"File\",\"Folder\",\"Image\",\"LinkSource\",\"Linkable\",\"MinifiedCssFile\",\"MinifiedJavaScriptFile\",\"Page\",\"Site\",\"Template\",\"Trash\",\"User\",\"Widget\",\"A\",\"Abbr\",\"Address\",\"Area\",\"Article\",\"Aside\",\"Audio\",\"B\",\"Base\",\"Bdi\",\"Bdo\",\"Blockquote\",\"Body\",\"Br\",\"Button\",\"Canvas\",\"Caption\",\"Cite\",\"Code\",\"Col\",\"Colgroup\",\"Command\",\"Component\",\"Datalist\",\"Dd\",\"Del\",\"Details\",\"Dfn\",\"Div\",\"Dl\",\"Dt\",\"Em\",\"Embed\",\"Fieldset\",\"Figcaption\",\"Figure\",\"Footer\",\"Form\",\"G\",\"H1\",\"H2\",\"H3\",\"H4\",\"H5\",\"H6\",\"Head\",\"Header\",\"Hgroup\",\"Hr\",\"Html\",\"I\",\"Iframe\",\"Img\",\"Input\",\"Ins\",\"Kbd\",\"Keygen\",\"Label\",\"Legend\",\"Li\",\"Link\",\"Main\",\"Map\",\"Mark\",\"Menu\",\"Meta\",\"Meter\",\"Nav\",\"Noscript\",\"Object\",\"Ol\",\"Optgroup\",\"Option\",\"Output\",\"P\",\"Param\",\"Pre\",\"Progress\",\"Q\",\"Rp\",\"Rt\",\"Ruby\",\"S\",\"Samp\",\"Script\",\"Section\",\"Select\",\"Small\",\"Source\",\"Span\",\"Strong\",\"Style\",\"Sub\",\"Summary\",\"Sup\",\"Table\",\"Tbody\",\"Td\",\"Textarea\",\"Tfoot\",\"Th\",\"Thead\",\"Time\",\"Title\",\"Tr\",\"Track\",\"U\",\"Ul\",\"Var\",\"Video\",\"Wbr\",\"AbstractMinifiedFile\",\"Cdata\",\"ConceptGroup\",\"ConceptGroupLabel\",\"CustomConceptAttribute\",\"CustomNote\",\"CustomTermAttribute\",\"DOMElement\",\"DOMNode\",\"DataFeed\",\"Definition\",\"DocumentFragment\",\"EMailMessage\",\"EditorialNote\",\"FeedItem\",\"FeedItemContent\",\"FeedItemEnclosure\",\"HistoryNote\",\"Indexable\",\"IndexedWord\",\"JavaScriptSource\",\"KafkaClient\",\"LDAPGroup\",\"LDAPUser\",\"MQTTClient\",\"Mailbox\",\"MessageClient\",\"MessageSubscriber\",\"NodeLabel\",\"Note\",\"ODFExporter\",\"ODSExporter\",\"ODTExporter\",\"PaymentItemNode\",\"PaymentNode\",\"PreferredTerm\",\"RemoteDocument\",\"ScopeNote\",\"ShadowDocument\",\"SimpleNonPreferredTerm\",\"SplitNonPreferredTerm\",\"Thesaurus\",\"ThesaurusArray\",\"ThesaurusConcept\",\"ThesaurusTerm\",\"VersionHistory\",\"VideoFile\",\"VirtualProperty\",\"VirtualType\",\"XMPPClient\",\"XMPPRequest\"],\"zoom\":1,\"connectorStyle\":\"Flowchart\",\"showRelLabels\":true}",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "id": "9a09b3c87bb34ee4ba48579603261715",
+    "name": "axel-workshop-1",
+    "owner": {
+      "name": "admin"
+    }
+  },
+  {
+    "configType": "xml-import",
+    "content": "{\"/test/item\":{\"action\":\"createNode\",\"isRoot\":true,\"type\":\"ThesaurusTerm\",\"properties\":{}}}",
+    "grantees": [
+      {
+        "allowed": "accessControl,read,write,delete",
+        "name": "admin"
+      }
+    ],
+    "id": "5d865e13c24b49f1a0f4bb19721163c1",
+    "name": "test",
+    "owner": {
+      "name": "admin"
+    }
+  }
+]
